@@ -9,9 +9,11 @@ ffmpeg-based script which makes video (mp4, mov) be able to play in flash player
 
 ## Installation
 
-In debian-based systems:
+You need to install ffmpeg package.
 
-    sudo apt-get install ffmpeg
+Example for debian-based systems:
+
+    $ sudo apt-get install ffmpeg
 
 ## Usage
 
