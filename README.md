@@ -16,4 +16,6 @@ In debian-based systems:
 ## Usage
 
 Shell command:
+
     $ ruby ruby-video-faststarter.rb <source_dir> [<destination_dir>]
+
