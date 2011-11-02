@@ -21,3 +21,6 @@ Shell command:
 
     $ ruby ruby-video-faststarter.rb <source_dir> [<destination_dir>]
 
+## TODO
+
+Processing with subdirectories
