@@ -1,4 +1,4 @@
-# Author: Ivan Teplyakov (itwebdev.ru)
+# Author: Ivan Teplyakov (iteplyakov.ru)
 # Github: https://github.com/ExReanimator
 #
 # Usage:
@@ -26,10 +26,10 @@ else
 end
 
 # for convenience cut last slash of source directory if exist
-srcdir = srcdir[0..-2] if srcdir[-1] == '/'
+srcdir.chop! if srcdir[-1] == '/'
 
 # and add it for destination directory
-dstdir = dstdir + '/' unless dstdir[-1] == '/'
+dstdir << '/' unless dstdir[-1] == '/'
 
 # read mp4 or mov video
 files = Dir[srcdir + "/*.{mp4,mov}"]
@@ -37,13 +37,13 @@ total = files.count
 
 raise RuntimeError, "Nothing to do in dir: " + srcdir, caller if total == 0
 
-puts "Founded: " << total.to_s << " videos"
+puts "Founded: " + total.to_s + " videos"
 puts "Starting..."
 
 files.each do |video|
   filename = File.basename(video).to_s
-  puts "Remained: " << total.to_s
-  puts "-- Processing " << filename
+  puts "Remained: " + total.to_s
+  puts "-- Processing " + filename
   
   # execute qt-faststart from ffmpeg package
   result = %x(qt-faststart #{video} #{dstdir}#{filename})
